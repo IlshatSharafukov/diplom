@@ -8,6 +8,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
+          sh 'id'
           sh 'sudo docker build . -t $imagename:0.$BUILD_NUMBER'
         }
       }
