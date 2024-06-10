@@ -16,7 +16,7 @@ pipeline {
       steps{
         script {
           withCredentials([usernamePassword(credentialsId: 'dockerhub-pwd',usernameVariable: 'dockerhubname', passwordVariable: 'dockerhubpwd')]) {
-                   sh 'docker login -u ${dockerhubname} -p ${dockerhubpwd}'}
+                   sh 'docker login -u ${dockerhubname} -p ${dockerhubpwd} cr.yandex'}
           sh 'docker push $imagename:0.$BUILD_NUMBER'
         }
       }
