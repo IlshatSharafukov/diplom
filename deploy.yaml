@@ -19,7 +19,8 @@ spec:
         image: cr.yandex/crpasim1ibnrr04p09uq/app-nginx:latest
         ports:
           - containerPort: 80
-
+      imagePullSecrets:
+      - name: yancr
 ---
 
 apiVersion: v1
