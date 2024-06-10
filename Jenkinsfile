@@ -9,7 +9,7 @@ pipeline {
       steps{
         script {
           sh 'id'
-          sh 'sudo docker build . -t $imagename:0.$BUILD_NUMBER'
+          sh 'sudo docker build . -t $imagename:latest'
         }
       }
     }
@@ -18,7 +18,7 @@ pipeline {
         script {
           withCredentials([usernamePassword(credentialsId: 'dockerhub-pwd', usernameVariable: 'dockerhubname', passwordVariable: 'dockerhubpwd')]) {
                    sh 'docker login -u ${dockerhubname} -p ${dockerhubpwd} cr.yandex'}
-          sh 'docker push $imagename:0.$BUILD_NUMBER'
+          sh 'docker push $imagename:latest'
         }
       }
     }
