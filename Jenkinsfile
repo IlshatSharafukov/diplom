@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    imagename = "khayrullinii/app-nginx"
+    imagename = "cr.yandex/crpasim1ibnrr04p09uq/app-nginx"
   }
   
   agent any
