@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-nginx
-        image: khayrullinii/app-nginx:latest
+        image: cr.yandex/crpasim1ibnrr04p09uq/app-nginx:latest
         ports:
           - containerPort: 80
 
