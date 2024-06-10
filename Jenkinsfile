@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Deploy') {
             steps {
-                echo 'Deploying only because this commit is tagged...'
+                sh "kubectl delete -f deploy.yaml"
                 sh "kubectl apply -f deploy.yaml"
             }
         }
